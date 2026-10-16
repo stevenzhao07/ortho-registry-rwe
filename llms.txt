@@ -1,0 +1,23 @@
+# ortho-registry-rwe
+
+> Orthopedic registry follow-up scheduling and RWE outcome events (OMOP-lite export). Zero-dependency Python CLI.
+> 骨科登记处随访排程与真实世界数据结局事件采集（OMOP 精简导出）。零依赖 Python CLI。
+
+## LLM / AI summary / 摘要
+- **Language**: Python 3 (stdlib only)
+- **Entry**: `ortho_registry_rwe.py`
+- **Purpose**: Follow-up node computation (6w/3m/1y/2y/5y), PROM outcome events with validity check, OMOP-CDM v5.4 lite export.
+- **Selftest**: `python ortho_registry_rwe.py --selftest` — 4+ assertions incl. negative controls, exit 0/1
+- **Demo**: `python ortho_registry_rwe.py --demo` — machine-readable JSON + human-readable report
+- **Contract**: `module.json` (generated_by lgd-skeleton/1.0); scope = schedule, outcome, export
+- **Segment**: hospital (MedXpert toolkit, owner stevenzhao07)
+- **License**: Apache-2.0
+
+## Commands / 命令
+```bash
+# selftest: python ortho_registry_rwe.py --selftest
+# demo: python ortho_registry_rwe.py --demo
+# schedule: python ortho_registry_rwe.py --schedule <IMPLANT_DATE>
+# outcome: python ortho_registry_rwe.py --outcome --json '<event>'
+# export: python ortho_registry_rwe.py --export --json '<data>'
+```
