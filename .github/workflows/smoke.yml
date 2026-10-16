@@ -1,0 +1,19 @@
+name: smoke
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+permissions: read-all
+
+jobs:
+  selftest:
+    name: Selftest + demo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run selftest
+        run: python ortho_registry_rwe.py --selftest
+      - name: Run demo
+        run: python ortho_registry_rwe.py --demo
