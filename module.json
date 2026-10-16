@@ -1,0 +1,51 @@
+{
+  "module": "ortho-registry-rwe",
+  "version": "0.1.0",
+  "generated_by": "lgd-skeleton/1.0",
+  "name": "ortho-registry-rwe",
+  "description": "Orthopedic registry follow-up scheduling and RWE outcome events (OMOP-lite export). Zero-dependency Python CLI.",
+  "description_zh": "骨科登记处随访排程与真实世界数据结局事件采集（OMOP 精简导出）。零依赖 Python CLI。",
+  "license": "Apache-2.0",
+  "language": "python",
+  "dependencies": [],
+  "entry": "ortho_registry_rwe.py",
+  "commands": {
+    "selftest": "python ortho_registry_rwe.py --selftest",
+    "demo": "python ortho_registry_rwe.py --demo",
+    "schedule": "python ortho_registry_rwe.py --schedule <IMPLANT_DATE>",
+    "outcome": "python ortho_registry_rwe.py --outcome --json '<event>'",
+    "export": "python ortho_registry_rwe.py --export --json '<data>'"
+  },
+  "contract": {
+    "scope": [
+      "schedule",
+      "outcome",
+      "export"
+    ],
+    "a1_authority_scope": true,
+    "a2_human_oversight": true,
+    "a3_accountability": true,
+    "exit_codes": {
+      "ok": 0,
+      "blocked": 1,
+      "usage": 2
+    },
+    "negative_controls": [
+      "invalid input rejected with exit 1"
+    ]
+  },
+  "ai_readable": [
+    "AGENTS.md",
+    "llms.txt"
+  ],
+  "docs": [
+    "README.md",
+    "LICENSE"
+  ],
+  "segment": "hospital",
+  "derives_from": "omop-ortho-toolkit",
+  "badges": {
+    "scorecard": "https://api.scorecard.dev/projects/github.com/stevenzhao07/ortho-registry-rwe/badge",
+    "license": "Apache-2.0"
+  }
+}
